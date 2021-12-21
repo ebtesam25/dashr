@@ -1,6 +1,6 @@
 
-sid = 'AC400001a05f6b9e61eee1478bab95562c'
-authToken = '319f970ef9f14f87b5739459a91acddc'
+sid = 'get ur own'
+authToken = 'get ur own'
 
 
 from datetime import date
