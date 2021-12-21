@@ -14,13 +14,13 @@ def remove_html_tags(text):
 
 
 amadeus = Client(
-    client_id='iXqeIZDXSAeG7aKGAG5PErEXxxNJWNiT',
-    client_secret='182VSOEZv6khP4aj'
+    client_id='get ur own',
+    client_secret='get ur own'
 )
 
 
 def getcoords(loc):
-    url = "http://api.positionstack.com/v1/forward?access_key=9f55832839eb43789ecf31ecfc1846cc&query=" + loc
+    url = "http://api.positionstack.com/v1/forward?access_key=get ur own key&query=" + loc
 
     payload={}
     headers = {}
