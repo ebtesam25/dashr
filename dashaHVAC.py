@@ -25,7 +25,7 @@ with open('credentials.json', 'r') as f:
 mongostring = creds["mongodb"]
 
 # print (mongostring)
-# client = MongoClient("mongodb+srv://user:password@teamzerocluster-mzyhk.mongodb.net/test?retryWrites=true&w=majority")
+# client = MongoClient("get ur own")
 client = MongoClient(mongostring)
 db = client["accessable"]
 
