@@ -1,0 +1,406 @@
+{
+  "version": "v2",
+  "intents": {
+    "yes": {
+      "includes": [
+        "yes",
+        "correct",
+        "sure",
+        "absolutely",
+        "yes siree bob",
+        "right",
+        "you got it",
+        "I would",
+        "yeah",
+        "I would"
+      ],
+      "excludes": ["fuck off"]
+    },
+    "covid": {
+      "includes": [
+        "coronavirus",
+        "covid-19",
+        "virus",
+        "pandemic"
+      ]
+    },
+    "no": {
+      "includes": [
+        "no",
+        "definitely not",
+        "wrong",
+        "incorrect",
+        "I do not",
+        "I don't",
+        "I would not",
+        "I wouldn't"
+      ],
+      "excludes": ["no, I want a delivery", "no, I want it delivered"]
+    },
+    "place_order": {
+      "includes": [
+        "I want to place an order",
+        "I want to pick up some food",
+        "Can I get some food?",
+        "order",
+        "food",
+        "I want to place an order for pick up",
+        "I'd like to pick up some food",
+        "can I pick up some food",
+        "I'd like to order a (burger)[food], (grilled cheese)[food], (fries)[food] and a (milkshake)[food]",
+        "can I get a (burger)[food], (grilled_cheese)[food], (fries)[food] and a (milkshake)[food] please",
+        "I'd like to order a (burger)[food], (fries)[food] and a (milkshake)[food]",
+        "can I get a (burger)[food], some (fries)[food] and a (soda)[food]?",
+        "I want a (burger)[food], (fries)[food] and a (soda)[food]",
+        "I would like a (hot_dog)[food], (milkshake)[food] and a (soda)[food]"
+      ]
+    },
+    "delivery": {
+      "includes": ["do you deliver", "deliver", "delivery"]
+    },
+    "door": {
+      "includes": ["front door", "gate", "doorbell","Is somebody at my door?","Who's at my door?"]
+    },
+    "trip": {
+      "includes": ["vacation", "tavel", "holidays","a trip","trip","road trip","staycation","go somewhere", "spend some time away","I'd like to go on a trip"]
+    },
+    "cup": {
+      "includes": [ "drink", "beverage","I'd like a cup of coffee","Make me a cup of coffee","Can I get a cup of coffee"]
+    },
+    "bright": {
+      "includes": ["dark", "light"]
+    },
+    "cold": {
+      "includes": ["hot", "warm", "chilly","thermostat","It's cold in here","It's too hot in here"]
+    },
+    "connect_me": {
+      "includes": [
+        "I want to speak to someone in the store",
+        "connect me to someone in store",
+        "I placed an order earlier, let me speak to someone in store",
+        "connect me",
+        "put me through to the store",
+        "put me through",
+        "connect"
+      ]
+    },
+    "soda_on_tap": {
+      "includes": [
+        "what soda do you have?",
+        "what sodas do you have on tap?",
+        "can I get a soda?",
+        "what about soda",
+        "soda?"
+      ]
+    },
+    "food_available": {
+      "includes": [
+        "what food do you have?",
+        "what are the menu options?",
+        "what can I get?",
+        "what's on the menu",
+        "menu"
+      ]
+    },
+    "toppings": {
+      "includes": [
+        "what toppings?",
+        "toppings?",
+        "what toppings do you have?",
+        "do you have topping options?",
+        "what are the topping options?"
+      ]
+    },
+    "bye": {
+      "includes": [
+        "bye",
+        "good bye",
+        "thanks bye",
+        "nevermind",
+        "forget about it",
+        "we're done",
+        "take it easy",
+        "peace out boo",
+        "peace"
+      ]
+    },
+    "pay_in_store": {
+      "includes": [
+        "pay in store",
+        "I'll pay in store",
+        "I'd like to pay in store",
+        "in store, please",
+        "I'll pay when I get there",
+        "yeah, in store is fine",
+        "when I pick it up",
+        "in store"
+      ]
+    },
+    "pay_by_card": {
+      "includes": ["by card", "now is fine", "I'll pay with my card", "card"]
+    }
+  },
+  "entities": {
+    "food": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "burger",
+          "synonyms": [
+            "burger",
+            "hamburger",
+            "a burger",
+            "a hamburger",
+            "a tasty hamburger"
+          ]
+        },
+        {
+          "value": "fries",
+          "synonyms": ["fries", "some fries", "french fries", "delicious fries"]
+        },
+        {
+          "value": "milkshake",
+          "synonyms": [
+            "milkshake",
+            "shake",
+            "a milkshake",
+            "strawberry milkshake",
+            "a tasty milkshake"
+          ]
+        },
+        {
+          "value": "hot dog",
+          "synonyms": [
+            "hot dog",
+            "french dog",
+            "a hot dog",
+            "a french dog",
+            "big dog"
+          ]
+        },
+        {
+          "value": "grilled cheese",
+          "synonyms": [
+            "grilled cheese",
+            "cheese sandwich",
+            "grilled cheese sandwich",
+            "a grilled cheese sandwich",
+            "a cheese sandwich"
+          ]
+        },
+        {
+          "value": "coke",
+          "synonyms": ["soda", "coke", "a soda", "a coke"]
+        }
+      ],
+      "includes": [
+        "(burger)[food], (fries)[food] and a (milkshake)[food]",
+        "(burger)[food], (fries)[food] and a (coke)[food]",
+        "(grilled cheese)[food], (fries)[food] and a (milkshake)[food]",
+        "(grilled cheese)[food], (fries)[food] and a (milkshake)[food]",
+        "(hot dog)[food], (fries)[food] and a (milkshake)[food]",
+        "I'd like a (burger)[food], (fries)[food] and a (milkshake)[food]",
+        "I'd like a (burger)[food], (fries)[food] and a (coke)[food]",
+        "I'd like   (grilled_cheese)[food], (fries)[food] and a (milkshake)[food]",
+        "I'd like a (grilled_cheese)[food], (fries)[food] and a (milkshake)[food]"
+      ]
+    },
+    "coffee": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "latte",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "cappuccino",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "mocha",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "dark roast",
+          "synonyms": [
+          ]
+        }
+      ],
+        "includes":[
+          "Make me a (latte)[coffee]"
+        ]
+    },
+    "destination": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "miami",
+          "synonyms": [
+            "miami beach"
+          ]
+        },
+        {
+          "value": "virginia",
+          "synonyms": [
+            "virginia beach"
+          ]
+        },
+        {
+          "value": "chicago",
+          "synonyms": [
+            "illinois"
+          ]
+        },
+        {
+          "value": "reston",
+          "synonyms": [
+            "northern virginia"
+          ]
+        },
+        {
+          "value": "los angeles",
+          "synonyms": [
+            "LA"
+          ]
+        },
+        {
+          "value": "san diego",
+          "synonyms": [
+            "california"
+          ]
+        },
+        {
+          "value": "florida",
+          "synonyms": [
+            "sunshine state"
+          ]
+        }
+      ],
+      "includes": [
+      ]
+    },
+    "num": 
+    {
+      "open_set": true,
+      "values": [
+        {
+          "value": "1",
+          "synonyms": ["first", "1st", "the first", "the 1st", "one"]
+        },
+        {
+          "value": "2",
+          "synonyms": ["second", "2nd", "the second", "the 2nd", "two"]
+        },
+        {
+          "value": "3",
+          "synonyms": ["third", "3rd", "the third", "the 3rd", "three"]
+        },
+        {
+          "value": "4",
+          "synonyms": ["fourth", "4th", "the fourth", "the 4th", "four"]
+        },
+        {
+          "value": "5",
+          "synonyms": ["fifth", "5th", "the fifth", "the 5th", "five"]
+        },
+        {
+          "value": "6",
+          "synonyms": ["sixth", "6th", "the sixth", "the 6th", "six"]
+        },
+        {
+          "value": "7",
+          "synonyms": ["seventh", "7th", "the seventh", "the 7th", "seven"]
+        }
+      ],
+      "includes": [
+        "I want to travel on (July)[dates] (fifth)[num]",
+        "I want ro return on (January)[dates] (the third)[num]",
+        "(May)[dates] (fifth)[num]",
+        "(the first)[num] of (February)[dates]"
+      ]
+    },
+    "dates": {
+      "open_set": true,
+      "values": [
+        {
+          "value": "january",
+          "synonyms": [
+            "jan"
+          ]
+        },
+        {
+          "value": "february",
+          "synonyms": [
+            "feb"
+          ]
+        },
+        {
+          "value": "march",
+          "synonyms": [
+            "mar"
+          ]
+        },
+        {
+          "value": "april",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "may",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "june",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "july",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "august",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "september",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "october",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "november",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "december",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "christmas",
+          "synonyms": [
+          ]
+        },
+        {
+          "value": "thanksgiving",
+          "synonyms": [
+          ]
+        }
+      ],
+      "includes": [
+      ]
+    }
+  }
+}
